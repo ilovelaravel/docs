@@ -6,7 +6,7 @@
     ],
     "require": {
         "php" : ">=7.0.0",
-        "doctrine/common": "^2.8",
+        "doctrine/common": "^2.8"
     },
     "require-dev": {
       "orchestra/testbench": "~3.0",
