@@ -21,7 +21,7 @@ Publish config
 
 All files needed are stored in ```storage/docs```. The main file is ```storage/docs/api.json```.
 
-All generated files live in ``````
+All generated files live in ```storage/docs/generated```. Copy them over to ```storage/docs``` after generation.
 
 Run the following command to generate the files:
 
