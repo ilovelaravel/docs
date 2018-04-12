@@ -7,7 +7,7 @@ The packaged reads json from a folder and turns it into a website with api info.
 
 ## Installation
 
-```composer require ilovelaravel/docs```
+```composer require "ilovelaravel/docs":"dev-master"```
 
 ### Install via composer:
 
