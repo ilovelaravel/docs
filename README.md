@@ -146,6 +146,12 @@ The structure of the folder ```examples``` looks like this::
  ```
  This should be your main folder. Configure this in your config. All generated files will be stored in the ```docs/generated``` folder. Copy files from there into the main folder. This way you can preview changes in without losing information that is allready generated before.
 
+### Routes command
+```php artisan docs:routes```
+Will give you a clean preview of the routes that will be used
+
+![screenshot](https://github.com/ilovelaravel/docs/blob/master/screenshot2.png)
+
 ### Views
 The documentation can be viewed in the browser: ```http(s)://your-url.something/docs```
 
