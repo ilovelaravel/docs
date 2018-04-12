@@ -5,6 +5,8 @@
 This package contains the documentation generator & documentation viewer.
 The packaged reads json from a folder and turns it into a website with api info. It also includes a generator.
 
+[[https://github.com/ilovelaravel/docs/blob/master/screenshot.png|alt=screenshot]]
+
 ## Installation
 
 ```composer require "ilovelaravel/docs":"dev-master"```
