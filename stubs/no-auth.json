@@ -1,0 +1,7 @@
+[
+  {
+    "key": "Accept",
+    "value": "application/json",
+    "type": "required"
+  }
+]

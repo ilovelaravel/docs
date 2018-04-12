@@ -1,0 +1,11 @@
+{
+  "links": {
+    "self": "<current_endpoint>"
+  },
+  "data": {
+    "success": {
+      "code": 200,
+      "message": "OK"
+    }
+  }
+}

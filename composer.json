@@ -1,0 +1,46 @@
+{
+    "name": "ilovelaravel/docs",
+    "description": "A tool to generate and display api docs",
+    "keywords": [
+      "docs","laravel","api"
+    ],
+    "require": {
+        "php" : ">=7.0.0",
+        "ramsey/uuid": "^3.7"
+    },
+    "require-dev": {
+      "orchestra/testbench": "~3.0",
+      "phpunit/phpunit": "^6.3"
+    },
+    "license": "The MIT License (MIT)",
+    "authors": [
+        {
+            "name": "Xander Smalbil",
+            "email": "xander@videofunk.nl"
+        }
+    ],
+    "extra": {
+      "branch-alias": {
+        "dev-master": "1.0-dev"
+      },
+      "laravel": {
+        "providers": [
+          "Ill\\Docs\\DocsProvider"
+        ]
+      }
+    },
+    "autoload": {
+      "psr-4": {
+        "Ill\\Docs\\": "src"
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Ill\\Docs\\Tests\\": "tests"
+      }
+    },
+    "scripts": {
+      "test": "phpunit"
+    },
+    "minimum-stability": "dev"
+}
