@@ -2,8 +2,9 @@
 
 use File;
 use Illuminate\Support\ServiceProvider;
-use Ill\Docs\Console\Commands\DocsSetup;
+use Ill\Docs\Console\Commands\DocsRoutes;
 use Ill\Docs\Console\Commands\DocsGenerate;
+use Ill\Docs\Console\Commands\DocsMakeRequest;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 
 class DocsProvider extends ServiceProvider
@@ -67,8 +68,9 @@ class DocsProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                DocsSetup::class,
-                DocsGenerate::class
+                DocsRoutes::class,
+                DocsGenerate::class,
+                DocsMakeRequest::class
             ]);
         }
     }

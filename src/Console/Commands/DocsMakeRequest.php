@@ -2,7 +2,7 @@
 
 use Illuminate\Console\GeneratorCommand;
 
-class SysMakeRequest extends GeneratorCommand
+class DocsMakeRequest extends GeneratorCommand
 {
 
     /**
