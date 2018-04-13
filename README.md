@@ -11,11 +11,7 @@ The packaged reads json from a folder and turns it into a website with api info.
 
 ```composer require "ilovelaravel/docs":"dev-master"```
 
-### Install via composer:
-
-
-### Basis setup
-Publish config
+Publish config the config
 
 ```php artisan vendor:publish```
 
