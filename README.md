@@ -21,11 +21,16 @@ All files needed are stored in ```storage/docs```. The main file is ```storage/d
 
 All generated files live in ```storage/docs/generated```. Copy them over to ```storage/docs``` after generation.
 
+You can control where the docs pages are being served from by adding an entry to you ```.env``` file.
+
+I use this when I am working on the docs: ```DOCS_DIRECTORY=storage/docs/generated``` 
+..and when I am happy, I change it to: ```DOCS_DIRECTORY=storage/docs``` 
+
+## Generator
+
 Run the following command to generate the files:
 
 ```php artisan api:docs:generate ```
-
-The result will be placed in the ```storage/docs/generated``` folder.
 
 There you will find the following structure:
 
@@ -47,12 +52,15 @@ There you will find the following structure:
 ```
 
 ### Routes preparation:
-The generator only looks at named routes starting with ```api```. Like this: ```->name(api.something.something)```
-The generator can extract permissions from routes that use the ```can``` middleware. Like this: 
+
+Routes should look like this:
 
 ```php
 $this->get('users', 'UsersController@index')->name('api.users.index')->middleware('can:users.read'); 
 ```
+
+The generator only looks at named routes starting with ```api```. Like this: ```->name(api.something.something)```
+The generator can extract permissions from routes that use the ```can``` middleware. 
 
 The frontend views are currently showing a menu, which can be build by preparing the routes like this:
 
@@ -86,12 +94,25 @@ Addresses
     Companies
 
 ### Controller preparation
+
 Annotations should be placed on controller methods.
 - ```@NoAuth``` For methods that do not need ```authentication```
 - ```@Title("Show all users")``` A title that describes the api action
 - ```@Info("This will return all users")``` Some information about the action
 
-### Api specific Form requests
+```php
+    /**
+     * @Title("Show all users")
+     * @Info("This will return all users")
+     * @return JsonResponse
+     */
+    public function index(): JsonResponse
+    {
+        // ..
+    }
+```
+
+### Form requests preparation
  
  If you create new form requests, for new api actions, then you could use the artisan command:
 
@@ -140,11 +161,13 @@ The structure of the folder ```examples``` looks like this::
  example/requests/named.route.namespace.json
  example/responses/named.route.namespace.json 
  ```
- This should be your main folder. Configure this in your config. All generated files will be stored in the ```docs/generated``` folder. Copy files from there into the main folder. This way you can preview changes in without losing information that is allready generated before.
+ 
+ The requests and response files have the same name as your named route.
+ All generated files will be stored in the ```docs/generated``` folder. This should be your main folder. Configure this in your config. 
+ Copy files from there into the main folder. This way you can preview changes in without losing information that is allready generated before.
 
 ### Routes command
-```php artisan docs:routes```
-Will give you a clean preview of the routes that will be used
+```php artisan docs:routes``` will give you a clean preview of the routes that will be used
 
 ![screenshot](https://github.com/ilovelaravel/docs/blob/master/screenshot2.png)
 
