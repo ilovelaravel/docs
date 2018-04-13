@@ -84,11 +84,13 @@ $this->group(['group'=>'addresses','collection'=>'companies'],
 
 This will result in a menu looking like this:
 
+```
 General
-    Users
-    Dogs
+    - Users
+    - Dogs
 Addresses
-    Companies
+    - Companies
+```
 
 ### Controller preparation
 
