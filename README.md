@@ -69,19 +69,16 @@ The frontend views are currently showing a menu, which can be build by preparing
 # collection will be the name of the child menu name.
 $this->group(['group'=>'general','collection'=>'users'],
     function() {
-        $this->get('users',      'Crud\usersController@index')->name('api.users.index')->middleware('can:users.read');
-        $this->post('users',     'Crud\usersController@store')->name('api.users.store')->middleware('can:users.store');
+        // ..
     });
 $this->group(['group'=>'general','collection'=>'dogs'],
     function() {
-        $this->get('dogs',       'Crud\dogsController@index')->name('api.dogs.index')->middleware('can:dogs.read');
-        $this->post('dogs',      'Crud\dogsController@store')->name('api.dogs.store')->middleware('can:dogs.store');
+        // ..
     });        
 
 $this->group(['group'=>'addresses','collection'=>'companies'],
     function() {
-        $this->get('companies',  'Crud\companiesController@index')->name('api.companies.index')->middleware('can:companies.read');
-        $this->post('companies', 'Crud\companiesController@store')->name('api.companies.store')->middleware('can:companies.store');
+        // ..
     });
 ```
 
