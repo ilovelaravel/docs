@@ -171,7 +171,7 @@ class DocsGenerate extends Command
     {
 
         $groups = [];
-
+            //@todo: change this->routes to routes
         foreach ($this->routes as $route) {
             $groups[] = $this->buildGroupsFromRoute($route, $collection);
         }
