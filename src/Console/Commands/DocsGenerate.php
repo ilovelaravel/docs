@@ -21,6 +21,7 @@ class DocsGenerate extends Command
      */
     protected $name = 'docs:generate';
 
+
     /**
      * {@inheritdoc}
      */
@@ -52,20 +53,18 @@ class DocsGenerate extends Command
 
     public function handle()
     {
-
+        $this->info("=              GENERATING DOCS                                      =");
         $this->guardEmptyRoutes();
 
         $routes = collect($this->routes)->filter(function (Route $route) {
 
-            $name = $route->getName();
-
-            return is_string($name) && substr($name, 0, 4) === "api.";
+            return in_array("docs", $route->middleware());
         })->all();
 
         $api = $this->constructApi($routes);
 
         $this->writer->write($api);
-
+        $this->comment("===========   docs are generated");
         return true;
 
     }
@@ -171,7 +170,7 @@ class DocsGenerate extends Command
     {
 
         $groups = [];
-            //@todo: change this->routes to routes
+
         foreach ($this->routes as $route) {
             $groups[] = $this->buildGroupsFromRoute($route, $collection);
         }
@@ -335,7 +334,7 @@ class DocsGenerate extends Command
         list($class, $request) = $this->retrieveFormRequest($controller, $method);
 
         if ( ! in_array(ApiRequestContract::class, $request->getInterfaceNames(), true)) {
-            $this->info("Please add ApiRequestContract to request object for route {$name}");
+            $this->info("Please add ApiRequestContract to request object for route [{$name}]  {$controller}@{$method}");
             exit;
         }
 
@@ -371,6 +370,5 @@ class DocsGenerate extends Command
             'example' => $item[ 2 ]
         ];
     }
-
 
 }
