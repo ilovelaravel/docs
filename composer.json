@@ -5,12 +5,10 @@
       "docs","laravel","api"
     ],
     "require": {
-        "php" : ">=7.0.0",
-        "doctrine/common": "^2.8"
+        "php" : ">=7.0.0"
     },
     "require-dev": {
-      "orchestra/testbench": "~3.0",
-      "phpunit/phpunit": "^6.3"
+      "orchestra/testbench": "~3.0"
     },
     "license": "MIT",
     "authors": [
